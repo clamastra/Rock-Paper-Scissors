@@ -5,8 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="RPS.css"></link>
 </head>
-<body>
+<body class="whole-page">
+    <div id="header"></div>
+    <div class="upper-dashboard">
+        <img src="defaulttransparent.png" alt="Default picture of a rock paper scissors game" width="400" height="auto"></img>
+        <h3 id="scoreP1">0</h3>
+        <h3>   -   </h3>
+        <h3 id="scoreP2">0</h3>
+        <img src="defaulttransparent.png" alt="Default picture of a rock paper scissors game" width="400" height="auto"></img>
+    </div>
+    <div class="lower-dashboard">
+        <button id="rock-button" onclick="rockButton()"></button>
+        <button id="paper-button" onclick="paperButton()"></button>
+        <button id="scissors-button" onclick="scissorsButton()"></button>
+    </div>
+    <h3 id="trademark">Made by Connor LaMastra, The Odin Project ®</h3>
     <script src="rock-papers-scissors-script.js"></script>
 </body>
 </html>

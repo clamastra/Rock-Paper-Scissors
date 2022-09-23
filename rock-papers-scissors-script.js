@@ -19,7 +19,7 @@ function playRound(playerSelection, computerSelection) {
         return "You lose! " + playerSelection.toLowerCase() + " is beat by " + computerSelection;
     }
 }
-
+/*
 function game() {
     let playerSelection = "";
     for (i=0; i<5; i++) {
@@ -32,3 +32,14 @@ function game() {
         console.log(playRound(playerSelection, getComputerChoice()));
     }
 }
+*/
+
+const rockBTN = document.querySelector("#rock-button")
+
+function rockButton() {
+    console.log("You clicked rock button")
+}
+
+const paperBTN = document.querySelector("#paper-button")
+
+const scissorsBTN = document.querySelector("#scissors-button")

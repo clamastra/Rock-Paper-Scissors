@@ -1,0 +1,58 @@
+.whole-page {
+    display: flex;
+    flex-direction: column;
+    background-image: url(4299652.jpg);
+    background-size:cover;
+}
+
+.upper-dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+#score {
+    color: beige;
+}
+
+h3 {
+    color: white;
+}
+
+.lower-dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+#rock-button {
+    background-image: url("rock.png");
+    width: 242px;
+    height: 204px;
+    margin: 20px;
+}
+
+#paper-button {
+    background-image: url("paper.png");
+    width: 202px;
+    height: 204px;
+    margin: 20px;
+}
+
+#scissors-button {
+    background-image: url("scissors.png");
+    width: 202px;
+    height: 204px;
+    margin: 20px;
+}
+
+
+#trademark {
+    color: white;
+    align-self: center;
+    margin-top: auto;
+    position: absolute;
+    bottom: 0px;
+}
