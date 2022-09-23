@@ -9,13 +9,31 @@ function getComputerChoice() {
     }
 }
 
+/*
 function playRound(playerSelection, computerSelection) {
-
     if (((playerSelection.toLowerCase() === "rock") && (computerSelection === "scissors")) || ((playerSelection.toLowerCase() === "scissors") && (computerSelection === "paper")) || ((playerSelection.toLowerCase() === "paper") && (computerSelection === "rock"))){
         return "You win! " + playerSelection.toLowerCase() + " beats " + computerSelection;
     } else if (playerSelection.toLowerCase() === computerSelection){
         return "Tie! You both chose " + playerSelection.toLowerCase();
     } else {
+        return "You lose! " + playerSelection.toLowerCase() + " is beat by " + computerSelection;
+    }
+}
+*/
+function playRound(playerSelection) {
+    let computerSelection = getComputerChoice();
+    if (((playerSelection.toLowerCase() === "rock") && (computerSelection === "scissors")) || ((playerSelection.toLowerCase() === "scissors") && (computerSelection === "paper")) || ((playerSelection.toLowerCase() === "paper") && (computerSelection === "rock"))){
+        P1Score = P1Score + 1;
+        document.getElementById("scoreP1").innerHTML = P1Score;
+        document.getElementById("header").innerHTML = "You win! " + playerSelection.toLowerCase() + " beats " + computerSelection;
+        return "You win! " + playerSelection.toLowerCase() + " beats " + computerSelection;
+    } else if (playerSelection.toLowerCase() === computerSelection){
+        document.getElementById("header").innerHTML = "Tie! You both chose " + playerSelection.toLowerCase();
+        return "Tie! You both chose " + playerSelection.toLowerCase();
+    } else {
+        P2Score = P2Score + 1;
+        document.getElementById("scoreP2").innerHTML = P2Score;
+        document.getElementById("header").innerHTML = "You lose! " + playerSelection.toLowerCase() + " is beat by " + computerSelection;
         return "You lose! " + playerSelection.toLowerCase() + " is beat by " + computerSelection;
     }
 }
@@ -34,12 +52,65 @@ function game() {
 }
 */
 
+let P1Score = 0
+let P2Score = 0
+
 const rockBTN = document.querySelector("#rock-button")
 
 function rockButton() {
-    console.log("You clicked rock button")
+    console.log("You clicked rock button");
+    answerString = playRound("rock", getComputerChoice);
+    console.log(answerString);
+
+    if (P1Score === 5) {
+        P1Score = 0;
+        P2Score = 0;
+        document.getElementById("scoreP1").innerHTML = P1Score;
+        document.getElementById("scoreP2").innerHTML = P2Score;
+        document.getElementById("header").innerHTML = "You win! Scores have been reset.";
+    } else if (P2Score === 5) {
+        P1Score = 0;
+        P2Score = 0;
+        document.getElementById("scoreP1").innerHTML = P1Score;
+        document.getElementById("scoreP2").innerHTML = P2Score;
+        document.getElementById("header").innerHTML = "You lose! Scores have been reset.";
+    }
 }
 
 const paperBTN = document.querySelector("#paper-button")
 
+function paperButton() {
+    answerString = playRound("paper", getComputerChoice);
+    console.log(answerString);
+
+    if (P1Score === 5) {
+        P1Score = 0;
+        P2Score = 0;
+        document.getElementById("scoreP1").innerHTML = P1Score;
+        document.getElementById("scoreP2").innerHTML = P2Score;
+    } else if (P2Score === 5) {
+        P1Score = 0;
+        P2Score = 0;
+        document.getElementById("scoreP1").innerHTML = P1Score;
+        document.getElementById("scoreP2").innerHTML = P2Score;
+    }
+}
+
 const scissorsBTN = document.querySelector("#scissors-button")
+
+function scissorsButton() {
+    answerString = playRound("scissors", getComputerChoice);
+    console.log(answerString);
+
+    if (P1Score === 5) {
+        P1Score = 0;
+        P2Score = 0;
+        document.getElementById("scoreP1").innerHTML = P1Score;
+        document.getElementById("scoreP2").innerHTML = P2Score;
+    } else if (P2Score === 5) {
+        P1Score = 0;
+        P2Score = 0;
+        document.getElementById("scoreP1").innerHTML = P1Score;
+        document.getElementById("scoreP2").innerHTML = P2Score;
+    }
+}
